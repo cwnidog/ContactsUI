@@ -13,9 +13,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    
+    AppDelegate.sharedDelegate().checkAccessStatus({ (accessGranted) -> Void in
+      print(accessGranted)
+    })
+  } // viewDidLoad()
     
 //MARK: - User Actions
     
